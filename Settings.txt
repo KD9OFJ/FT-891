@@ -1,3 +1,96 @@
-My Favorite FT-891 Settings
+Here are my (KD9OFJ) FT-891 Settings for 'Mobile Operating' _both_ SSB Phone and Data modes, eg FT8/SSB POTA/SOTA or ARRL FD. 
 
-This is a work in progress, settings change as experiments are done! 
+17-01 RESET FACTORY		Start here, clean slate, Yaesu Defaults. Latest firmware! At the time of this writing: 
+18-01 MAIN VERSION: V01-09
+18-01 DSP VERSION: V02-04
+18-01 LCD VERSION: V01-01
+
+Personal UI Preferences:
+
+02-03 DIMMER LCD: 2		Keep it low. Save your night vision. Also saves power.
+03-04 DIMMER TX/BUSY: 2		See above.
+02-05 PEAK HOLD: 2.0sec		Good for figuring out the 'max' of a fast changing SWR/PO meter. 
+05-04 BEEP LEVEL: 0		My first instinct is to want to smash any technology that beeps at me.
+
+DIGITAL MODES: (WSJT-X FT8 etc...)
+
+01-02 AGC MID DELAY: 500msec    This is the gain setting that AGC AUTO will use when doing DATA mode.
+				This change is slightly lower than the default of 700msec, which is for PSK. 
+				(Remember the FT-891 predates FT8.) 
+				SOURCE: The most recent firmware for the Yaesu FTDX10 includes a special 'PRESET' mode for FT8
+				and when that PRESET is enabled this is what that setting us. 							
+
+05-06 CAT RATE: 38400bps	All the bps. As high as it can go is best. 
+05-07 CAT TOT: 100ms		The default timeout value of 10ms is too short. Try 1000ms if 100ms doesn't work / slow computer. 
+
+05-20 FAN CONTROL: CONTEST	FT8 like most data modes is a 100% duty cycle mode and things will get hot. Save your finals!
+
+08-01 DATA MODE: OTHERS		The FT-891 predates modern modes like FT8 and its digital mode defaults are set for PSK.  
+08-03 OTHER DISP: 1500Hz	These settings are required to make it work with modern modes.
+08-04 OTHER SHIFT: 1500Hz	 
+
+FUNCTION-1:
+WDH: 3000			It will default to 500Hz in DATA mode because that's PSK. Need 3000Hz for most digital modes in WSJT-X. 
+				Might want to assign this to one of the A/B/C front buttons since it seems to turn off/change inconvienently? 
+
+08-05 DATA LCUT FREQ: 100Hz     Signals below and above these frequencies will be thrown off a cliff. 
+08-06 DATA LCUT SLOPE: 18dB/oct There is much carrier noise below 100Hz, get rid of it.  
+08-07 DATA HCUT FREQ: 3000Hz	Although the WSJT-X software can deal with it, it would be better if not there in the first place. 
+08-09 DATA LCUT SLOPE: 18dB/oct This way more of the CPU power is dedicated to decoding legit signals instead of noise. I have waterfall OCD.
+08-10 DATA PTT SELECT: DAKY	PTT is sent via serial TX line as a command. RTS and DTR do work as well since it's a full USB-B serial port.
+				I have had issues with DAKY PTT not working right and that might be related to CAT TOT being too low...YMMV.
+08-12 DATA BFO: USB		Most data modes are Upper Side Band regardless of the frequency.
+
+11-03 SSB TX BPF: 300-2700	Change this to 300-2700 for SSB Phone DX/QRP or 200-2800 for SSB Phone QRO RagChew
+				Note that the FT-891 does not have a TX band pass filter for DATA modes, only SSB. 
+
+16-14 DATA DATA GAIN: 50  	This will vary with whatever little box is used to interface the computer with the radio
+				and is used in conjuction with the computer volume to make sure that the the audio is not
+				being overdriven eg 'shouting into the microphone.' ALC is the meter that moves when this
+				is happening. Leave this at the default and adjust computer volume, starting from low
+				(10%) and move up until the ALC meter moves. Temporarily turn off 02-05 PEAK HOLD for this.
+				
+				Ideally you want to find a combination of settings so that the WSJT-X Pwr slider works 
+				somewhat accurately. Eg, set to -10.0db makes your 100W -> 10W. This way you can vary your
+				power output without having to find the radio and dig through radio menus. 
+
+				For example, you can set Pwr to -13.0db to make a 100W radio do 5W. 
+				RX can't hear your QRP QSO? Punch up the Pwr slider a bit, no radio visit required.
+				
+				Wanna do some WSPR? Set it about half way to -20.0db. 
+
+SSB PHONE OPTIMIZATIONS from HL1ZIX:
+			
+Philosophy: Most radios do not have good sounding RX bass from their tiny internal/microphone speakers.
+Therefore when TXing, it makes sense to attenuate your voice lows and boost the highs so that you sound better on RX from crap speakers.
+(Unless the operator has paid an arm and a leg, firstborn, 401K and mortgage for the 'big external speaker.')
+
+VOICE MODES (Equalizer settings when compression aka processing aka 'PRC' is _OFF_):
+15-01 EQ1 FREQ: 300  		Lows: At frequencies +- 8 around 300hz, reduce gain by 15. 
+15-02 EQ1 LEVEL: -15    
+15-03 EQ1 BWTH: 8     	
+15-04 EQ1 FREQ: 1300 		Mids: At frequencies +- 8 around 1300hz, increase gain by 8.
+15-05 EQ1 LEVEL: 8       
+15-06 EQ1 BWTH 8     
+15-07 EQ1 FREQ: 2300 		Highs: At frequencies +- 8 around 2300hz, increase gain by 10. 
+15-08 EQ1 LEVEL: 10  
+15-09 EQ1 BWTH: 8     
+
+VOICE MODES (Equalizer settings when compression aka processing aka 'PRC' is _ON_) (same as above):
+15-10 P-EQ1 FREQ: 300  		Lows: At frequencies +- 8 around 300hz, reduce gain by 15. 
+15-11 P-EQ1 LEVEL: -15    
+15-12 P-EQ1 BWTH: 8     	
+15-23 P-EQ1 FREQ: 1300 		Mids: At frequencies +- 8 around 1300hz, increase gain by 8.
+15-14 P-EQ1 LEVEL: 8       
+15-06 P-EQ1 BWTH: 8     
+15-07 P-EQ1 FREQ: 2300 		Highs: At frequencies +- 8 around 2300hz, increase gain by 10. 
+15-08 P-EQ1 LEVEL: 10  
+15-09 P-EQ1 BWTH: 8     
+
+16-07 SSB MIC GAIN: 		Adjust this down until the ALC meter doesn't move while speaking; and
+				then adjust this a little bit up until your output power is maximized.
+				Do it with PRC enabled and disabled depending on your preference.  
+
+
+
+
