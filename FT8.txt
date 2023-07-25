@@ -1,4 +1,4 @@
-Here are my (KD9OFJ) FT-891 Settings for 'Mobile Operating' _both_ SSB Phone and Data modes, eg FT8/SSB POTA/SOTA or ARRL FD. 
+Here are my (KD9OFJ) FT-891 Settings for 'Mobile Operating' FT8
 
 17-01 RESET FACTORY		Start here, clean slate, Yaesu Defaults. Latest firmware! At the time of this writing: 
 18-01 MAIN VERSION: V01-09
@@ -58,39 +58,4 @@ WDH: 3000			It will default to 500Hz in DATA mode because that's PSK. Need 3000H
 				RX can't hear your QRP QSO? Punch up the Pwr slider a bit, no radio visit required.
 				
 				Wanna do some WSPR? Set it about half way to -20.0db. 
-
-SSB PHONE OPTIMIZATIONS from HL1ZIX:
-			
-Philosophy: Most radios do not have good sounding RX bass from their tiny internal/microphone speakers.
-Therefore when TXing, it makes sense to attenuate your voice lows and boost the highs so that you sound better on RX from crap speakers.
-(Unless the operator has paid an arm and a leg, firstborn, 401K and mortgage for the 'big external speaker.')
-
-VOICE MODES (Equalizer settings when compression aka processing aka 'PRC' is _OFF_):
-15-01 EQ1 FREQ: 300  		Lows: At frequencies +- 8 around 300hz, reduce gain by 15. 
-15-02 EQ1 LEVEL: -15    
-15-03 EQ1 BWTH: 8     	
-15-04 EQ1 FREQ: 1300 		Mids: At frequencies +- 8 around 1300hz, increase gain by 8.
-15-05 EQ1 LEVEL: 8       
-15-06 EQ1 BWTH 8     
-15-07 EQ1 FREQ: 2300 		Highs: At frequencies +- 8 around 2300hz, increase gain by 10. 
-15-08 EQ1 LEVEL: 10  
-15-09 EQ1 BWTH: 8     
-
-VOICE MODES (Equalizer settings when compression aka processing aka 'PRC' is _ON_) (same as above):
-15-10 P-EQ1 FREQ: 300  		Lows: At frequencies +- 8 around 300hz, reduce gain by 15. 
-15-11 P-EQ1 LEVEL: -15    
-15-12 P-EQ1 BWTH: 8     	
-15-23 P-EQ1 FREQ: 1300 		Mids: At frequencies +- 8 around 1300hz, increase gain by 8.
-15-14 P-EQ1 LEVEL: 8       
-15-06 P-EQ1 BWTH: 8     
-15-07 P-EQ1 FREQ: 2300 		Highs: At frequencies +- 8 around 2300hz, increase gain by 10. 
-15-08 P-EQ1 LEVEL: 10  
-15-09 P-EQ1 BWTH: 8     
-
-16-07 SSB MIC GAIN: 		Adjust this down until the ALC meter doesn't move while speaking; and
-				then adjust this a little bit up until your output power is maximized.
-				Do it with PRC enabled and disabled depending on your preference.  
-
-
-
 
