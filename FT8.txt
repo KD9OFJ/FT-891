@@ -8,7 +8,7 @@ Here are my (KD9OFJ) FT-891 Settings for 'Mobile Operating' FT8
 Personal UI Preferences:
 
 02-03 DIMMER LCD: 2		Keep it low. Save your night vision. Also saves power.
-03-04 DIMMER TX/BUSY: 2		See above.
+02-04 DIMMER TX/BUSY: 2		See above.
 02-05 PEAK HOLD: 2.0sec		Good for figuring out the 'max' of a fast changing SWR/PO meter. 
 05-04 BEEP LEVEL: 0		My first instinct is to want to smash any technology that beeps at me.
 
@@ -21,7 +21,7 @@ DIGITAL MODES: (WSJT-X FT8 etc...)
 				and when that PRESET is enabled this is what that setting us. 							
 
 05-06 CAT RATE: 38400bps	All the bps. As high as it can go is best. 
-05-07 CAT TOT: 100ms		The default timeout value of 10ms is too short. Try 1000ms if 100ms doesn't work / slow computer. 
+05-07 CAT TOT: 1000ms		The default timeout value of 10ms is too short. Try 1000ms for DigiRig. 
 
 05-20 FAN CONTROL: CONTEST	FT8 like most data modes is a 100% duty cycle mode and things will get hot. Save your finals!
 
